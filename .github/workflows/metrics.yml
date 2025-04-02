@@ -9,11 +9,12 @@ on:
 jobs:
   achievements:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: achievements.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: benjamin-branchware
           base: achievements
@@ -25,12 +26,13 @@ jobs:
 
   github-metrics:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: header.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -41,23 +43,25 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
   lines:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: lines-of-code.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           base: "repositories"
           plugin_lines: yes
 
   acti_comm:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: acti_comm.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,12 +73,13 @@ jobs:
 
   iso_calender:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: iso_calender.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -88,11 +93,12 @@ jobs:
 
   habits:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: github-habits.svg
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           config_timezone: ${{ secrets.USER_TIMEZONE }} # Set timezone
           user: benjamin-branchware
@@ -106,12 +112,13 @@ jobs:
 
   issue_pr_lang:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: issue_pr_lang.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -126,12 +133,13 @@ jobs:
 
   repositories:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: lowlighter/metrics@latest
         with:
           filename: repositories.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_SECRET }}
+          token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
